@@ -143,3 +143,109 @@ Weights were assigned using **Analytical Hierarchy Process (AHP)**:
 - Python (Pandas, NumPy, XGBoost, Matplotlib)
 - MCDA (AHP)
 - OpenStreetMap, NASA POWER
+
+## 🔧 How to Set Up and Run the Project
+**1️⃣ Software Requirements**
+
+Make sure the following software is installed:
+
+- ✅ QGIS
+
+Download QGIS Long Term Release (LTR)
+
+Link: https://qgis.org/en/site/forusers/download.html
+
+Recommended version: QGIS 3.x LTR
+
+- ✅ Python
+
+Python 3.8 or higher
+
+Download: https://www.python.org/downloads/
+
+**2️⃣ Python Libraries Required**
+
+Install the required Python packages using pip:
+
+pip install pandas numpy matplotlib scikit-learn xgboost
+
+
+(If you are using Anaconda, you can install via conda install as well.)
+
+**3️⃣ Clone or Download the Repository**
+git clone https://github.com/Harshita30-bansal/GIS-ML-Solar-Farm-Siting.git
+
+
+Or download as ZIP from GitHub and extract it.
+
+**4️⃣ Open the GIS Project in QGIS**
+
+- Open QGIS
+
+- Go to File → Open Project
+
+- Select the file:
+
+Solar GIS.qgz
+
+
+All GIS layers (LULC, DEM, roads, powerlines, suitability maps) will load automatically.
+
+📌 If any layer path is broken:
+Right-click layer → Set Data Source → reconnect from the /data folder.
+
+**5️⃣ Running the GIS Analysis (Optional – for reproduction)**
+
+Inside QGIS:
+
+- Use Raster Calculator for weighted overlay
+
+- Use Processing Toolbox → SAGA → Potential Incoming Solar Radiation
+
+- Use Proximity (Raster Distance) tools for distance to roads/grid
+
+- Apply Reclassification based on defined thresholds
+
+- Convert final raster to polygons and filter areas > 5 hectares
+
+(These steps were already executed; users can view outputs directly.)
+
+**6️⃣ Running the Machine Learning Model**
+
+-Navigate to the ML folder or Python script/notebook
+
+- Ensure NASA POWER CSV data is present
+
+- Run the script or notebook to:
+
+- Preprocess irradiance data
+
+- Train XGBoost model
+
+- Evaluate RMSE, MAE, R²
+
+- Forecast solar energy for 2026
+
+Example:
+
+python train_xgboost_model.py
+
+**7️⃣ Output Files**
+
+The project produces:
+
+Final Solar Farm Suitability Map
+
+Ranked optimal solar farm locations
+
+ML prediction plots
+
+Forecasted solar irradiance values (kWh/m²/day)
+
+**8️⃣ Notes**
+
+All spatial analysis is performed at 30m resolution for consistency.
+
+The ML model uses a time-aware train–test split to avoid data leakage.
+
+The project is designed as a decision-support framework, not a construction blueprint.
