@@ -234,18 +234,18 @@ python train_xgboost_model.py
 
 The project produces:
 
-Final Solar Farm Suitability Map
+- Final Solar Farm Suitability Map
 
-Ranked optimal solar farm locations
+- Ranked optimal solar farm locations
 
-ML prediction plots
+- ML prediction plots
 
-Forecasted solar irradiance values (kWh/m²/day)
+- Forecasted solar irradiance values (kWh/m²/day)
 
 **8️⃣ Notes**
 
-All spatial analysis is performed at 30m resolution for consistency.
+- All spatial analysis is performed at 30m resolution for consistency.
 
-The ML model uses a time-aware train–test split to avoid data leakage.
+- The ML model uses a time-aware train–test split to avoid data leakage.
 
-The project is designed as a decision-support framework, not a construction blueprint.
+- The project is designed as a decision-support framework, not a construction blueprint.
